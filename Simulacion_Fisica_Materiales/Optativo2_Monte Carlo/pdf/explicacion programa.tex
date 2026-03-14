@@ -1,0 +1,33 @@
+\documentclass[a4paper, 12pt] {article}
+\usepackage[spanish] {babel}
+\usepackage[utf8] {inputenc}
+\usepackage[T1] {fontenc}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsmath, amsfonts, latexsym, color, textcomp, anysize}
+\usepackage{float}
+\renewcommand{\baselinestretch}{1}
+
+\marginsize{1.5cm}{1cm}{1.5cm}{1.5cm}
+\parindent=2mm
+\parskip=3mm
+
+\title{Monte Carlo}
+\author{Luis Basanta Pérez}
+\date{}
+
+\begin{document}
+\maketitle
+
+En el programa de Monte Carlo trabajamos con un sistema NVT y el objetivo es sacar cuatro de las magnitudes del sistema. Para ello leemos un fichero en el que tenemos guardado las posiciones de las partículas del sistema. Luego seleccionamos una partícula al azar, calculamos la energía potencial de esa partícula, la desplazamos una cantidad aleatoria y volvemos a calcular su energía potencial. Si la delta de energía es negativa aceptamos la nueva configuración. Si la delta de energía es positiva calculamos una probabilidad de aceptación como $e^{-\beta \Delta E}$, donde beta es el inverso de la temperatura. Obtenemos un número aleatorio con la función random y si ese número es menor que la probabilidad aceptamos la nueva configuración, mientras que si el número aleatorio es mayor la nueva configuración se rechaza y se continúa con la inicial.
+
+Este proceso se repetirá 5000000 de veces. Además dentro del bucle, cada 1000 pasos, contaremos el porcentaje de configuraciones rechazadas y configuraciones aceptadas. Si el porcentaje es mayor que $55\%$ aumentamos el desplazamiento máximo, mientras que si es menor que $45\%$ reducimos el desplazamiento máximo. Lo último que haremos en el bucle será calcular la media de la energía potencial, de su primera y segunda derivada con respecto al volumen, del producto de la energía potencial y su derivada, del cuadrado de la energía potencial y del cuadrado de su derivada.
+
+Una vez fuera del bucle calculamos la presión, $C_v$, $\gamma$ y $k_T$ utilizando las medias y grabamos los resultados en un archivo.
+
+Ejecutamos este programa diez veces para poder obtener una incertidumbre del valor de las magnitudes. La décima vez que ejecutamos el programa llamamos al final deste una subrutina en la que calculamos la media de las magnitudes y su incertidumbre, que es el doble de la desviación estándar de la media. 
+
+El valor que obtenemos para la presión es coherente y bastante similar al obtenido en el tercer programa obligatorio mientras que los otros tres resultados no tiene sentido por lo que debe de haber algún fallo en el programa.
+
+\end{document}
