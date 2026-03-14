@@ -1,0 +1,33 @@
+===========================
+          DATA
+===========================
+
+>>> Vector de las alfas:
+    alfa = [ 1.000000 -1.000000 ]
+
+>>> Vector de las betas:
+    beta = [ 1.000000 1.000000 ]
+
+>>> Tolerancia:
+    tol = 1.00000E-10
+
+
+
+**** COMPUTATION ****
+ >>> Convergencia:
+2 
+
+Si obtenemos un 1 no es consistente porque rho1 ~= 0
+Si obtenemos un 2 no es consistente porque rhop1 ~= sigma1
+Si obtenemos un 3 es consistente pero no estable porque hay raíces con módulo mayor que uno
+Si obtenemos un 4 es consistente pero no estable porque hay alguna múltiple de módulo uno
+Si obtenemos un 5 es convergente
+
+
+ >>> ¿Método explícito o implícito?
+Implícito 
+
+
+ >>> Orden del método:
+0 
+
