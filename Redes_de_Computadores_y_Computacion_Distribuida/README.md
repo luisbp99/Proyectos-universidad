@@ -1,67 +1,15 @@
-# Ejercicios de Servidor-Cliente y Método Monte Carlo
+# Redes de computadores y computación distribuida
 
-En esta carpeta se incluyen dos ejercicios de programación relacionados con la comunicación en red y los métodos numéricos.
+Los programas de esta carpeta están orientados al aprendizaje de comunicación cliente-servidor, programación con sockets y desarrollo de aplicaciones distribuidas.
 
-## 1. Servidor-Cliente Eco
+## 📂ServidorClienteEco
 
-El objetivo de este ejercicio es implementar un sistema básico de comunicación **cliente-servidor**.
+En esta carpeta se implementa una aplicación básica de comunicación cliente-servidor tipo eco. El sistema está compuesto por dos programas: un cliente y un servidor. El cliente envía un mensaje al servidor y este lo devuelve escrito ahora todo en letras mayúsculas. Se implementan dos versiones del sistema: una basada en coneción TCP y otra basada en conexión UDP. 
 
-### Descripción
+## 📂Monte Carlo
 
-Un **servidor eco (Echo server)** es un servidor que recibe un mensaje enviado por un cliente y devuelve exactamente el mismo mensaje al cliente.
+En esta carpeta se desarrolla una aplicación cliente-servidor para aproximar el valor del número $\pi$ mediante el método de Monte Carlo. El sistema se basa en la generación de puntos aleatorios en el plano. Para ello se diseña un objeto servidor que, dado un número (n) de pares ordenados generados aleatoriamente, calcula cuántos el número de puntos (m) que se encuentran dentro del círculo de radio unidad. Se diseña también un objeto cliente que hace uso del servidor para obtener el valor de m y calcular así una aproximación de $\pi$. 
 
-El sistema está compuesto por dos programas:
+## 📂Monte Carlo Paralelo 
 
-- **Servidor**
-  - Espera conexiones entrantes de clientes.
-  - Recibe los mensajes enviados por el cliente.
-  - Devuelve al cliente el mismo mensaje recibido.
-
-- **Cliente**
-  - Se conecta al servidor.
-  - Envía un mensaje al servidor.
-  - Recibe y muestra el mensaje devuelto por el servidor.
-
-### Objetivo
-
-Este ejercicio permite comprender conceptos básicos como:
-
-- Programación con sockets
-- Arquitectura cliente-servidor
-- Comunicación entre procesos a través de red
-
----
-
-## 2. Aproximación de π mediante el método de Monte Carlo
-
-Este ejercicio utiliza el **método de Monte Carlo** para aproximar el valor del número π.
-
-### Descripción
-
-El método se basa en el uso de **muestreo aleatorio**. El procedimiento es el siguiente:
-
-1. Se generan puntos aleatorios dentro de un cuadrado de lado 2.
-2. Dentro del cuadrado se considera una circunferencia de radio 1.
-3. Se cuentan los puntos que caen dentro de la circunferencia.
-
-El valor de π puede aproximarse mediante la relación:
-
-π ≈ 4 × (número de puntos dentro del círculo / número total de puntos)
-
-### Objetivo
-
-El propósito de este ejercicio es:
-
-- Comprender el método de Monte Carlo
-- Utilizar generación de números aleatorios
-- Aproximar constantes matemáticas mediante simulación
-
----
-
-## Contenido de la carpeta
-
-En esta carpeta se incluyen:
-
-- Implementación del **servidor eco**
-- Implementación del **cliente eco**
-- Programa de simulación **Monte Carlo para aproximar π**
+En esta carpeta se desarrolla una versión paralela del programa anterior. En este caso el cliente puede comunicarse en paralelo con múltiples objetos servidores. El trabajo de generación y evaluación de puntos se reparte entre varios servidores y los resultados obtenidos por cada servidor se agrupan para calcular una aproximación global de $\pi$. Para gestionar estas comunicaciones simultáneas se utilizan hilos de ejecución (threads).
