@@ -24,7 +24,7 @@ conocidas las expresiones de $\alpha$ y $\beta$.
 El modelo de interés a corto propuesto por Cox, Ingersoll y Ross (CIR) se basa en la EDE
 
 $$
-dr_t = \alpha(\gamma - r_t) dt + \rho \sqrt{r_t] dX_t
+dr_t = \alpha(\gamma - r_t) dt + \rho \sqrt{r_t} dX_t
 $$
 
 Para $\alpha = 0.2$, $\gamma = 0.05$, $\rho = 0.1$ y $r_0 = 0.04$, mediante los métodos de Euler-Maruyama y Milstein I, obtener con 100 pasos de tiempo los estimadores de $E(r_T)$ con n=10, 100 y 1000 simulacioines para T=1.
