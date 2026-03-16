@@ -20,6 +20,6 @@ Cada carpeta se corresponde con una asignatura del máster o del grado.
 
 Este repositorio sirve como portfolio técnico para roles relacionados con:
 
--Modelación matemática y simulación.
--Data science aplicado.
--Matemática aplicada a la industria.
+* Modelación matemática y simulación.
+* Data science aplicado.
+* Matemática aplicada a la industria.
